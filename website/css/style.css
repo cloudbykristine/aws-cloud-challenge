@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family:monospace, sans-serif;
+  box-sizing: border-box;
+  line-height: 130%;
+  text-align: justify;
+}
+
+.try {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  padding:4rem 0rem 0rem 0rem;
+  width: 100vw; /* 100% of the viewport width */
+}
+
+.placeholder {
+  
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  align-content: center;
+  background-color:white;
+  color: black;
+  font-family: monospace;
+  font-weight: 400;
+  padding: 1rem 0rem 0rem 0rem;
+  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+
+}
+
+.myname {
+  color: black;
+  font-weight: lighter;
+  font-family: monospace;
+  font-size: 3.5rem;
+  text-decoration: none;
+  margin-left: 1rem;
+  
+}
+
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iam {
+  border: 0.4rem solid black;
+  color: black;
+ letter-spacing: 0.3rem;
+  padding: 0.5rem;
+}
+.greeting {
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-size: 5rem;
+  color: #1A4314;
+}
+
+.rheader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+}
+
+.wrap{
+    border: 0.2rem solid white;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+    display: inline-block;
+    color:white;
+    background-color: black;
+    color: goldenrod;
+  box-shadow: 0.5rem 0.5rem gray;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2rem;
+
+}
+
+.trait{
+  margin-top: 2%;
+  border: 0.15rem dashed white;
+  display: inline-block;
+  font-family: 'courier new';
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 550;
+  color: #B2D2A4;
+  padding: 0px 10px;
+  font-size: 2rem;
+  background-color:black;
+}
+
+.views{
+  margin-left: 1rem;
+  border: 0.15rem dashed white;
+  display: inline-block;
+  font-family: 'courier new';
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 550;
+  color: gold;
+  padding: 0px 10px;
+  font-size: 3rem;
+  background-color:black;
+}
+
+.wrap:hover {
+  background:black;
+  color: #B2D2A4;
+  padding: 0rem 1.2rem;
+  font-size: 2.1rem;
+}
+
+.highlight {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  font-family: monospace;
+}
+
+h1 {
+  text-align:center;
+  letter-spacing: 0.2em;
+}
+
+body {
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+  background: lightgrey;
+  color:black;
+  overflow: scroll;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.tagline {
+  text-align: center;
+  background-color: #1A4314;
+  color:white;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 0.2rem;
+  letter-spacing: 0.1em;
+  font-family:'courier new';
+  font-weight: 590;
+  margin: 0;
+}
+
+.subtagline{
+  text-align:center;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+  position: relative;
+  top: 1px;
+  margin-bottom: 4%;
+  font-family:'courier new';
+    
+}
+
+.role {
+    font-weight:bold;
+    color: darkgreen;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 1.3rem;
+}
+
+.role, .school {
+  padding-left:40px;
+  margin: 1% 0%;
+}
+
+.key {
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  background-color: black;
+  
+}
+
+.skills li {
+    font-family: monospace;
+    color: black;
+    font-weight: normal;
+    margin-left: 3rem;
+    line-height: 1.5;
+  
+}
+
+.skills {
+  padding-top: 1rem;
+}
+.organization {
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+  color: gray;
+  font-style: italic;
+}
+
+.certifications {
+  color: black;
+  padding: 2rem 0rem 0rem 4rem;
+}
+
+h2 {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.header li {
+  padding: 1rem;
+}
+
+.firstrole {
+  margin-top: 4%;
+}
+
+.header a.home:hover, .header a.pagelink:hover {
+    color: goldenrod; /* Changes text color to white on hover */
+    border: 1px solid white;
+    background: black;
+    border-radius: 1px;
+    letter-spacing: 0.2em;
+    padding: 1rem;
+ }
+
+.header a.home, .header a.pagelink {
+    color: #B2D2A4; /* Default color for links */
+    text-decoration: none; /* Optional: removes underline */
+    font-weight: 400;
+    text-transform: uppercase;
+    
+}
+
+.summary {
+  margin: 2rem 0rem 0rem 2rem;
+}
+
+.enclosure {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+  border: 2px solid none;
+}
+
+.rubix {
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  grid-template-rows: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 2fr);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  align-content: center;
+  justify-content: center;
+}
+
+.mybox {
+  padding: 2rem;
+  margin: 0.25rem; /* Manage spacing between boxes */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border: 0.2rem solid white;
+  border-radius: 0%;
+  background-color: rgba(50, 150, 100, 0.5); /* experiment */
+  font-size: 1rem;
+  color: white;
+  font-weight: lighter;
+  width:200px;
+  height:200px;
+} 
+
+
+.number {
+  font-size: 4rem;
+  border: 0.5rem solid white;
+  padding: 0.1rem 0.5rem;
+  font-family: monospace;
+  font-weight: bolder;
+  text-align: center;
+
+}
+
+.trio {
+  text-align: left;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+  color: #1A4314;
+  font-family: 'courier new';
+  font-weight: 600;
+}
+
+.emp {
+  color: black;
+  font-weight: 900;
+  font-size: 1.3rem;
+  font-family: courier new;
+  text-shadow: 0.4rem 0.1rem 2rem rgba(255, 255, 255, 0.7);
+}
+
+.box2, .box4, .box6 {
+  background-color: lightgrey;
+  border: 2px solid white;
+  box-shadow: none;
+}
+
+.next {
+  margin-top: 3rem;
+  background-color: white;
+}
+
+#career {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.mybox:hover {
+
+  background-color:dodgerblue;
+}
+
+.channel {
+  display: flex;
+  background-color: white;
+  padding-bottom: 2rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.connection {
+  text-align: center;
+  background-color: #1A4314;
+  color:white;
+  font-size: 2.05rem;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.1em;
+  font-family:'courier new';
+  font-weight: 590;
+  margin-bottom: 0.6rem;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.4rem 0.2rem 0.2rem gray;
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+ 
