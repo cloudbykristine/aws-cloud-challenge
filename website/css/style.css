@@ -234,10 +234,11 @@ h2 {
     color: white; /* Changes text color to white on hover */
     border: 1px solid white;
     background-color: #1A4314;
-    border-radius: 1px;
+    border-radius: 5px;
     letter-spacing: 0.2em;
-    padding: 1rem;
+    padding: 0.75rem;
     font-family:'courier new';
+    font-weight: 600;
  }
 
 .header a.home, .header a.pagelink {
