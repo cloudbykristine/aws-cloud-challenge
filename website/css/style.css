@@ -231,9 +231,9 @@ h2 {
 }
 
 .header a.home:hover, .header a.pagelink:hover {
-    color: goldenrod; /* Changes text color to white on hover */
+    color: white; /* Changes text color to white on hover */
     border: 1px solid white;
-    background: black;
+    background-color: #1A4314;
     border-radius: 1px;
     letter-spacing: 0.2em;
     padding: 1rem;
