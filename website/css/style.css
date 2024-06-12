@@ -237,6 +237,7 @@ h2 {
     border-radius: 1px;
     letter-spacing: 0.2em;
     padding: 1rem;
+    font-family:'courier new';
  }
 
 .header a.home, .header a.pagelink {
