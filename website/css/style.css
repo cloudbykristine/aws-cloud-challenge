@@ -318,8 +318,8 @@ h2 {
 .emp {
   color: black;
   font-weight: 900;
-  font-size: 1.3rem;
-  font-family: courier new;
+  font-size: 1.2rem;
+  font-family: courier;
   text-shadow: 0.4rem 0.1rem 2rem rgba(255, 255, 255, 0.7);
 }
 
