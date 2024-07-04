@@ -368,6 +368,7 @@ h2 {
   margin-bottom: 0.6rem;
   border-radius: 1rem;
   box-shadow: 0.2rem 0.4rem 0.2rem 0.2rem gray;
+  text-decoration: none;
 }
 
 @keyframes blink {
