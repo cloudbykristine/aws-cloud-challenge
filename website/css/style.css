@@ -371,6 +371,10 @@ h2 {
   text-decoration: none !important;
 }
 
+.connection:hover{
+  color:white !important;
+  text-decoration: none !important;
+}
 @keyframes blink {
   50% {
       opacity: 0;
