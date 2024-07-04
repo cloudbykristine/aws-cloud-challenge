@@ -371,10 +371,6 @@ h2 {
   text-decoration: none !important;
 }
 
-.connection:hover{
-  color:white !important;
-  text-decoration: none !important;
-}
 @keyframes blink {
   50% {
       opacity: 0;
@@ -383,6 +379,16 @@ h2 {
 
 .blink {
   animation: blink 1s step-start infinite;
+}ß
+
+.channel .connection a,
+.channel .connection a:visited,
+.channel .connection a:active {
+    color: white;
+    text-decoration: none;
 }
 
+.channel .connection a:hover {
+    text-decoration: underline; /* Optionally underline on hover */
+}
  
