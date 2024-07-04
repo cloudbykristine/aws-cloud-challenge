@@ -386,5 +386,5 @@ h2 {
 .channel .connection a:active {
     color: white;
     text-decoration: none !important;
-    font-family:'courier new';
+    font-family:'Courier New', Courier, monospace;
 } 
