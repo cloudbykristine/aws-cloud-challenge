@@ -386,9 +386,4 @@ h2 {
 .channel .connection a:active {
     color: white;
     text-decoration: none;
-}
-
-.channel .connection a:hover {
-    text-decoration: underline; /* Optionally underline on hover */
-}
- 
+} 
