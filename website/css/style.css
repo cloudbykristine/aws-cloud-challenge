@@ -357,8 +357,8 @@ h2 {
 
 .connection {
   text-align: center;
-  background-color: #1A4314;
-  color:white !important;
+  background-color: white;
+  border-color: #1A4314;
   font-size: 2.05rem;
   font-weight: bolder;
   padding: 0.5rem 1rem;
@@ -367,7 +367,7 @@ h2 {
   font-weight: 590;
   margin-bottom: 0.6rem;
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.4rem 0.2rem 0.2rem gray;
+  box-shadow: 0.2rem 0.4rem 0.2rem 0.2rem #1A4314;
   text-decoration: none !important;
 }
 
@@ -379,8 +379,17 @@ h2 {
 
 .blink {
   animation: blink 1s step-start infinite;
-}ß
-
-.channel .connection a{
-    color: white;
 }
+
+/* action */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.rights {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
