@@ -381,10 +381,6 @@ h2 {
   animation: blink 1s step-start infinite;
 }ß
 
-.channel .connection a,
-.channel .connection a:visited,
-.channel .connection a:active {
+.channel .connection a{
     color: white;
-    text-decoration: none !important;
-    font-family:'Courier New', Courier, monospace;
-} 
+}
