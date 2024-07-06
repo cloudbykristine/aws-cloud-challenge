@@ -16,7 +16,7 @@
   justify-content:center;
   align-items: center;
   align-content: center;
-  background-color: white;
+  background-color: rgb(255,255,255,0.6)
   padding:4rem 0rem 0rem 0rem;
   width: 100vw; /* 100% of the viewport width */
 }
@@ -381,12 +381,16 @@ h2 {
   animation: blink 1s step-start infinite;
 }
 
-/* action */
+/* call to action */
 a {
-  color: black;
+  color:#1A4314;
   text-decoration: none;
 }
 
+a:hover {
+  color:#1A4314;
+  font-family: 'Courier New', Courier, monospace;
+}
 .rights {
   text-align: center;
   justify-content: center;
