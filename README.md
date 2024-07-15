@@ -2,7 +2,7 @@
 
 This project is part of the Cloud Resume Challenge, authored by Forrest Brazeal, which aims to demonstrate cloud skills by deploying a personal resume website using various cloud services.
 I used AWS services for this project, but can also be adapted to GCP and Azure.
-This README provides an overview of the project, setup instructions, and key components used.
+This README provides an overview of the project and key components used.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -23,7 +23,7 @@ The Cloud Resume Challenge is a comprehensive project that involves:
 
 ## Architecture
 
-![Architecture Diagram](path-to-your-architecture-diagram.png)
+![Architecture Diagram](cloud-resume-architecture.png)
 
 The architecture of this project includes:
 - **Frontend:** A static website hosted on Amazon S3 and served through Amazon CloudFront.
