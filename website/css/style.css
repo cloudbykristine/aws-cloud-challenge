@@ -16,8 +16,8 @@
   justify-content:center;
   align-items: center;
   align-content: center;
-  background-color: rgb(255,255,255,0.6)
-  padding:4rem 0rem 0rem 0rem;
+  background-color: rgb(255,255,255,0.6);
+  padding: 4rem 0rem 0rem 0rem;
   width: 100vw; /* 100% of the viewport width */
 }
 
@@ -44,7 +44,6 @@
   font-size: 3.5rem;
   text-decoration: none;
   margin-left: 1rem;
-  
 }
 
 
