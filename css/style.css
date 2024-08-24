@@ -1,0 +1,478 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+    line-height: 130%;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: white;
+}
+
+/* Container Styles */
+.container1,
+.container2 {
+    width: 100%; /* Ensure the container takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+
+}
+.container4 {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+    font-family: monospace;
+    padding-right: 1rem;
+}
+
+.peek-icon {
+    margin-right: 0.2rem; /* Space between the icon and the text */
+    position: relative;
+    top: 2px; /* Adjust the vertical alignment if needed */
+    font-size: 2rem; /* Adjust the size of the icon */
+    color: black; /* Set the color of the icon */
+}
+
+.pagelink:hover .peek-icon {
+    color: #1A4314; /* Change color on hover */
+}
+
+.container5 {
+    display: block;
+    width: 100%;
+}
+
+.container6,
+.container7 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block; /* Ensure containers are block elements */
+
+}
+
+/*Individual Container Styles*/
+.bytes {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    color: #1A4314;
+    font-family: 'courier new';
+    font-weight: 600;
+    margin: auto;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+
+/*Grid Styling*/
+.container6 {
+    display: block;
+    justify-content: center; /* Center .boxes horizontally */
+    width: 100%; /* Full width of the container */
+    margin: auto;
+}
+
+.boxes {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto; /* Center the .boxes element within .grid */
+    font-size: 1rem;
+    width: 40%; /* Allow .boxes to take the full width of .onebox */
+    max-width: 40%; /* Prevent .boxes from exceeding the width of .onebox */
+    justify-content: center; /* Center .boxes horizontally */
+    grid-gap: 0.2rem;
+    padding-bottom: 2rem;
+}
+
+.mybox {
+    text-align: center;
+    padding:1.5rem;
+    margin: 0.15rem; /* Manage spacing between boxes */
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    border: 0.2rem solid white;
+    background-color: rgba(50, 150, 100, 0.5); /* experiment */
+    font-size: 1.1rem;
+    color: white;
+    font-weight: lighter;
+    width: 200px;
+    height:200px;
+}
+
+/*Individual Box Styling*/
+.box2, .box4, .box6, .box8 {
+    background-color: lightgrey;
+    border: 2px solid white;
+    box-shadow: none;
+  }
+
+.mybox:hover {
+    background-color:dodgerblue;
+  }
+
+.emp {
+    color: black;
+    font-weight: 900;
+    font-family: courier;
+    text-shadow: 0.4rem 0.1rem 2rem rgba(255, 255, 255, 0.7);
+}
+
+.certifications {
+    color: black;
+    padding: 0rem 0rem 0rem 4rem;
+  }
+
+.trait{
+    margin: 1rem;
+    border: 0.15rem dashed white;
+    display: inline-block;
+    font-family: 'courier new';
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 550;
+    color: #B2D2A4;
+    padding: 0px 5px;
+    font-size: 2rem;
+    background-color:black;
+  }
+/* Background Colors */
+.container1 {
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent background */
+}
+
+.container2 {
+    background-color: #1A4314;
+    color: white;
+    text-align: center;
+}
+
+.container3 {
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.container4 {
+    background-color: white;
+    color: black;
+}
+
+.container5 {
+    background-color: lightgrey;
+    padding-bottom: 1rem;
+
+}
+
+.container6 {
+    background-color: lightgrey;
+
+}
+
+
+.container8 {
+    background-color: white;
+    padding: 1rem;
+    margin: auto;
+}
+.close {
+    color: lightgrey;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.views {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.2em;
+    font-weight: 550;
+    padding: 0.2rem 0.5rem;      /* Add some padding for better spacing */
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    border: 0.15rem dashed white;
+    display: inline-block;       /* Keep the views element inline */
+}
+
+/* Container for .welcome and .views */
+.welcome-container {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    justify-content: center; /* Horizontally centers the content */
+    text-align: center;
+    width: 90%; /* Ensures the container takes the full width */
+}
+
+
+.connection a {
+    text-decoration: none;
+    color: #1A4314;
+    position: relative;
+}
+
+.hover-text {
+    display: none;
+}
+
+.connection a:hover .default-text {
+    display: none;
+}
+
+.connection a:hover .hover-text {
+    display: inline;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.connection a:hover {
+    color: darkblue; /* Optional: Change link color on hover */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Header Group */
+.header-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: center;
+}
+
+.header-group h1 {
+    margin: 0 1rem; /* Space between headers */
+    white-space: nowrap; /* Prevent line break within the headers */
+}
+
+/* Specific Text Styles */
+.greeting {
+    font-size: 5rem;
+    color: #1A4314;
+}
+
+.squared {
+    color: #1A4314;
+    font-size: 4rem;
+    border: 0.4rem solid white;
+    padding: 0.1rem 0.5rem;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+
+.peek {
+    padding-left: 2rem;
+}
+
+.sneak {
+    font-weight: 900;
+    color: green;
+    line-height: 150%;
+    font-size: 1.1rem;
+}
+
+.myname {
+    font-size: 3.5rem;
+    color: black;
+    font-weight: lighter;
+}
+
+.tagline {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+
+
+
+/* Navigation Styles */
+.header ul {
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+    padding: 0; /* Remove padding from the ul */
+    margin: 0; /* Remove margin from the ul */
+    list-style: none; /* Remove default list style */
+}
+
+.header li {
+    margin-left: 1rem; /* Space between navigation items */
+}
+
+.header a {
+    color: gray;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+}
+
+.introduction {
+    font-style: 'monaco';
+}
+.header a:hover {
+    color: white;
+    background-color: #1A4314;
+}
+
+.iam {
+    border: 0.3rem solid black;
+    color: black;
+    letter-spacing: 0.3rem;
+    padding: 0.5rem;
+}
+
+
+.mybox img {
+    width: 100%; /* Reduce the size of the image on smaller screens */
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 2rem;
+    }
+
+    .myname {
+        font-size: 1.5rem;
+    }
+
+    .header-group {
+        justify-content: center;
+        text-align: center;
+        font-style: 'courier new';
+    }
+
+    .header ul {
+        justify-content: center; /* Center align on mobile */
+        margin-right: 0; /* Remove right margin on mobile */
+        flex-direction: row; /* Stack navigation items vertically on mobile */
+    }
+
+    .header a {
+        font-size: 1rem;
+    }
+
+    .boxes {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%; /* Adjust the grid width to fit on mobile */
+    }
+
+    .mybox {
+        width: 100%; /* Make sure the boxes fit within the grid */
+        height: auto;
+        padding: 0.5rem; /* Reduce padding */
+        margin: 0.1rem;
+        font-size: 0.9rem; /* Adjust font size for readability */
+    }
+
+    .mybox img {
+        width: 80%; /* Ensure images fit within the boxes */
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .mybox p {
+        font-size: 0.8rem; /* Adjust font size within boxes */
+        line-height: 1.2;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+    }
+
+    .views {
+        font-size: 1rem;
+    }
+
+    .squared {
+        color: #1A4314;
+        font-size: 2rem;
+        border: 0.3rem solid white;
+        padding: 0.1rem 0.5rem;
+        font-family: monospace;
+        font-weight: bolder;
+        text-align: center;
+    
+    }
+
+    .bytes {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-left: .5rem;
+        color: #1A4314;
+        font-family: 'courier new';
+        font-weight: 600;
+        margin: auto;
+        width: 100%;
+        
+      }
+
+      .iam {
+        border: 0.3rem solid black;
+        color: black;
+        letter-spacing: 0.3rem;
+        padding: 0.2rem;
+    }
+}
+
+.welcome {
+    font-size: 1.5rem; /* Default font size for larger screens */
+    text-align: center;
+
+    font-weight: bold;
+    margin-right: 0.2rem;         /* Add some space between .welcome and .views */
+}
+
+@media (max-width: 768px) {
+    .welcome {
+        font-size: 1rem; /* Reduce font size on smaller screens */
+        padding: 0.5rem; /* Adjust padding for better fit */
+        text-align: center; /* Center the text on mobile screens */
+        margin: 0 auto; /* Center the element horizontally */
+        width: 90%; /* Ensure the text fits within the screen */
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blink 1s step-start infinite;
+    color: black;
+  }
+  
