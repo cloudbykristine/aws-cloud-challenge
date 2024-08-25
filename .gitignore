@@ -1,0 +1,3 @@
+#Ignore apple files
+.DS_*
+index1.js
