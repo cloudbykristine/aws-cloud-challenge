@@ -19,7 +19,7 @@ The Cloud Resume Challenge is a comprehensive project that involves:
 2. Deploying the website on a cloud service.
 3. Connecting the website to a serverless backend to count visitors.
 4. Implementing continuous integration and continuous deployment (CI/CD) pipelines.
-5. Utilizing infrastructure as code (IaC) tools to manage the cloud infrastructure.
+5. Utilizing Terraform as an IaC tool to manage the backend.
 
 ## Architecture
 
@@ -29,7 +29,7 @@ The architecture of this project includes:
 - **Frontend:** A static website hosted on Amazon S3 and served through Amazon CloudFront.
 - **Backend:** An API Gateway endpoint integrated with AWS Lambda and DynamoDB to track visitor counts.
 - **CI/CD:** GitHub Actions for automated testing and deployment.
-- **IaC:** Infrastructure managed using Terraform (WIP)
+- **IaC:** Backend infrastructure managed using Terraform (Lambda, API GW, DynamoDB)
 
 <img width="456" alt="image" src="https://github.com/user-attachments/assets/c3703cba-34f1-46f5-8b4d-d624b405697d">
 
@@ -39,7 +39,7 @@ Before you begin, ensure you have the following:
 - An AWS account with appropriate permissions.
 - Basic knowledge of HTML, CSS, and JavaScript.
 - Familiarity with AWS services such as S3, Lambda, API Gateway, and DynamoDB.
-- Installed tools: AWS CLI, Terraform, Git, and Node.js.
+- Installed tools: AWS CLI, Terraform, Git, and Python.
 
 ## Technologies Used
 
@@ -54,7 +54,7 @@ Before you begin, ensure you have the following:
 - **CI/CD:**
   - GitHub Actions
 - **Infrastructure as Code:**
-  - Terraform (WIP)
+  - Terraform
 
 ## Contributing
 Contributions are welcome! Please create a pull request or open an issue for any changes or improvements.
