@@ -3,7 +3,7 @@ const counter = document.querySelector(".views");
         async function updateCounter() {
             try {
                 // Use your actual API Gateway Invoke URL
-                let response = await fetch('https://2hyo9saik8.execute-api.us-east-1.amazonaws.com/dev/viewCount');
+                let response = await fetch('https://zsto4r7u4c.execute-api.ap-southeast-2.amazonaws.com/dev/visitors');
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
