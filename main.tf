@@ -54,31 +54,18 @@ resource "aws_api_gateway_rest_api" "crc-api" {
   }
 }
 
+####################################### API Resource Creation ####################################### 
 resource "aws_api_gateway_resource" "crc-api-resource" {
   parent_id   = aws_api_gateway_rest_api.crc-api.root_resource_id
   path_part   = "visitors"
   rest_api_id = aws_api_gateway_rest_api.crc-api.id
 }
 
-# Create API Gateway Methods 
+####################################### GET METHOD Creation ####################################### 
 
 resource "aws_api_gateway_method" "crc-api-get" {
   authorization = "NONE"
   http_method   = "GET"
-  resource_id   = aws_api_gateway_resource.crc-api-resource.id
-  rest_api_id   = aws_api_gateway_rest_api.crc-api.id
-}
-
-resource "aws_api_gateway_method" "crc-api-any" {
-  authorization = "NONE"
-  http_method   = "ANY"
-  resource_id   = aws_api_gateway_resource.crc-api-resource.id
-  rest_api_id   = aws_api_gateway_rest_api.crc-api.id
-}
-
-resource "aws_api_gateway_method" "crc-api-options" {
-  authorization = "NONE"
-  http_method   = "OPTIONS"
   resource_id   = aws_api_gateway_resource.crc-api-resource.id
   rest_api_id   = aws_api_gateway_rest_api.crc-api.id
 }
@@ -88,17 +75,50 @@ resource "aws_api_gateway_integration" "proxy-lambda-get" {
   resource_id             = aws_api_gateway_resource.crc-api-resource.id
   rest_api_id             = aws_api_gateway_rest_api.crc-api.id
   type                    = "AWS_PROXY"
-  integration_http_method = "GET"
+  integration_http_method = "POST"
   uri                     = aws_lambda_function.visitor-counter.invoke_arn
 }
 
-resource "aws_api_gateway_integration" "proxy-lambda-any" {
-  http_method             = aws_api_gateway_method.crc-api-any.http_method
-  resource_id             = aws_api_gateway_resource.crc-api-resource.id
-  rest_api_id             = aws_api_gateway_rest_api.crc-api.id
-  type                    = "AWS_PROXY"
-  integration_http_method = "ANY"
-  uri                     = aws_lambda_function.visitor-counter.invoke_arn
+/*
+Regardless of whether you use GET, POST, or any other HTTP method in your API Gateway, 
+when you integrate with a Lambda function, the integration_http_method is set to POST 
+because API Gateway sends a POST request to the Lambda function.
+*/
+
+resource "aws_api_gateway_method_response" "GET_method_response" {
+  rest_api_id = aws_api_gateway_rest_api.crc-api.id
+  resource_id = aws_api_gateway_resource.crc-api-resource.id
+  http_method = aws_api_gateway_method.crc-api-get.http_method
+  status_code = "200"
+
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = true,
+    "method.response.header.Access-Control-Allow-Methods" = true,
+    "method.response.header.Access-Control-Allow-Origin"  = true
+  }
+}
+
+resource "aws_api_gateway_integration_response" "GET_integration_response" {
+  rest_api_id = aws_api_gateway_rest_api.crc-api.id
+  resource_id = aws_api_gateway_resource.crc-api-resource.id
+  http_method = aws_api_gateway_method.crc-api-get.http_method
+  status_code = aws_api_gateway_method_response.GET_method_response.status_code
+
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+    "method.response.header.Access-Control-Allow-Methods" = "'GET,POST,OPTIONS'",
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
+  }
+
+}
+
+####################################### OPTIONS METHOD Creation ####################################### 
+
+resource "aws_api_gateway_method" "crc-api-options" {
+  authorization = "NONE"
+  http_method   = "OPTIONS"
+  resource_id   = aws_api_gateway_resource.crc-api-resource.id
+  rest_api_id   = aws_api_gateway_rest_api.crc-api.id
 }
 
 resource "aws_api_gateway_integration" "proxy-lambda-options" {
@@ -117,8 +137,8 @@ resource "aws_api_gateway_method_response" "options_response" {
   http_method = aws_api_gateway_method.crc-api-options.http_method
   status_code = "200"
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = true
-    "method.response.header.Access-Control-Allow-Methods" = true
+    "method.response.header.Access-Control-Allow-Headers" = true,
+    "method.response.header.Access-Control-Allow-Methods" = true,
     "method.response.header.Access-Control-Allow-Origin"  = true
   }
 }
@@ -130,8 +150,8 @@ resource "aws_api_gateway_integration_response" "options_integration_response" {
   status_code = aws_api_gateway_method_response.options_response.status_code
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-    "method.response.header.Access-Control-Allow-Methods" = "'GET,POST,OPTIONS'"
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+    "method.response.header.Access-Control-Allow-Methods" = "'GET,POST,OPTIONS'",
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 }
@@ -143,10 +163,14 @@ resource "aws_api_gateway_deployment" "crc-api-deploy" {
   triggers = {
     redeployment = sha1(jsonencode([
       aws_api_gateway_resource.crc-api-resource.id,
-      aws_api_gateway_method.crc-api-any.id,
+      aws_api_gateway_method.crc-api-get.id,
+      aws_api_gateway_method.crc-api-options.id,
       aws_api_gateway_integration.proxy-lambda-get.id,
-      aws_api_gateway_integration.proxy-lambda-any.id,
       aws_api_gateway_integration.proxy-lambda-options.id,
+      aws_api_gateway_method_response.GET_method_response.id,
+      aws_api_gateway_method_response.options_response.id,
+      aws_api_gateway_integration_response.GET_integration_response.id,
+      aws_api_gateway_integration_response.options_integration_response.id
     ]))
   }
 
@@ -156,8 +180,7 @@ resource "aws_api_gateway_deployment" "crc-api-deploy" {
 
   depends_on = [
     aws_api_gateway_integration.proxy-lambda-get,
-    aws_api_gateway_integration.proxy-lambda-any,
-    aws_api_gateway_integration.proxy-lambda-options,
+    aws_api_gateway_integration.proxy-lambda-options
   ]
 }
 
@@ -166,7 +189,7 @@ resource "aws_lambda_permission" "apigw_lambda_permission" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.visitor-counter.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.crc-api.execution_arn}/*/*"
+  source_arn    = "${aws_api_gateway_rest_api.crc-api.execution_arn}/*"
 }
 
 ####################################### Dynamo DB Table Creation ####################################### 
