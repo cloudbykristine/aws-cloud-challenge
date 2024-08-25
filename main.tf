@@ -56,7 +56,7 @@ resource "aws_api_gateway_rest_api" "crc-api" {
 
 resource "aws_api_gateway_resource" "crc-api-resource" {
   parent_id   = aws_api_gateway_rest_api.crc-api.root_resource_id
-  path_part   = "{proxy+}"
+  path_part   = "visitors"
   rest_api_id = aws_api_gateway_rest_api.crc-api.id
 }
 
@@ -148,7 +148,7 @@ resource "aws_lambda_permission" "apigw_lambda_permission" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.visitor-counter.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.crc-api.execution_arn}/*/*/*"
+  source_arn    = "${aws_api_gateway_rest_api.crc-api.execution_arn}/*/*"
 }
 
 ####################################### Dynamo DB Table Creation ####################################### 
