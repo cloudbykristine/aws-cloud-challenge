@@ -56,7 +56,7 @@ resource "aws_api_gateway_rest_api" "crc-api" {
 
 resource "aws_api_gateway_resource" "crc-api-resource" {
   parent_id   = aws_api_gateway_rest_api.crc-api.root_resource_id
-  path_part   = "visitors"
+  path_part   = "{proxy+}"
   rest_api_id = aws_api_gateway_rest_api.crc-api.id
 }
 
