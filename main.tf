@@ -62,6 +62,13 @@ resource "aws_api_gateway_resource" "crc-api-resource" {
 
 # Create API Gateway Methods 
 
+resource "aws_api_gateway_method" "crc-api-get" {
+  authorization = "NONE"
+  http_method   = "GET"
+  resource_id   = aws_api_gateway_resource.crc-api-resource.id
+  rest_api_id   = aws_api_gateway_rest_api.crc-api.id
+}
+
 resource "aws_api_gateway_method" "crc-api-any" {
   authorization = "NONE"
   http_method   = "ANY"
@@ -74,6 +81,15 @@ resource "aws_api_gateway_method" "crc-api-options" {
   http_method   = "OPTIONS"
   resource_id   = aws_api_gateway_resource.crc-api-resource.id
   rest_api_id   = aws_api_gateway_rest_api.crc-api.id
+}
+
+resource "aws_api_gateway_integration" "proxy-lambda-get" {
+  http_method             = aws_api_gateway_method.crc-api-get.http_method
+  resource_id             = aws_api_gateway_resource.crc-api-resource.id
+  rest_api_id             = aws_api_gateway_rest_api.crc-api.id
+  type                    = "AWS_PROXY"
+  integration_http_method = "GET"
+  uri                     = aws_lambda_function.visitor-counter.invoke_arn
 }
 
 resource "aws_api_gateway_integration" "proxy-lambda-any" {
@@ -128,6 +144,7 @@ resource "aws_api_gateway_deployment" "crc-api-deploy" {
     redeployment = sha1(jsonencode([
       aws_api_gateway_resource.crc-api-resource.id,
       aws_api_gateway_method.crc-api-any.id,
+      aws_api_gateway_integration.proxy-lambda-get.id,
       aws_api_gateway_integration.proxy-lambda-any.id,
       aws_api_gateway_integration.proxy-lambda-options.id,
     ]))
@@ -138,6 +155,7 @@ resource "aws_api_gateway_deployment" "crc-api-deploy" {
   }
 
   depends_on = [
+    aws_api_gateway_integration.proxy-lambda-get,
     aws_api_gateway_integration.proxy-lambda-any,
     aws_api_gateway_integration.proxy-lambda-options,
   ]
