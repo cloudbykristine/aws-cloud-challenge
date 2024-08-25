@@ -31,7 +31,7 @@ The architecture of this project includes:
 - **CI/CD:** GitHub Actions for automated testing and deployment.
 - **IaC:** Backend infrastructure managed using Terraform (Lambda, API GW, DynamoDB)
 
-<img width="456" alt="image" src="https://github.com/user-attachments/assets/c3703cba-34f1-46f5-8b4d-d624b405697d">
+![image](https://github.com/user-attachments/assets/ff3693ad-fa27-40aa-944a-995d15973239)
 
 ## Prerequisites
 
