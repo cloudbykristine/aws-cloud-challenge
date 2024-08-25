@@ -9,7 +9,7 @@ This README provides an overview of the project and key components used.
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+- [Blog Post](#blogpost)
 - [License](#license)
 
 ## Project Overview
@@ -22,8 +22,6 @@ The Cloud Resume Challenge is a comprehensive project that involves:
 5. Utilizing Terraform as an IaC tool to manage the backend.
 
 ## Architecture
-
-![Architecture Diagram](cloud-resume-architecture.png)
 
 The architecture of this project includes:
 - **Frontend:** A static website hosted on Amazon S3 and served through Amazon CloudFront.
@@ -56,7 +54,7 @@ Before you begin, ensure you have the following:
 - **Infrastructure as Code:**
   - Terraform
 
-## Contributing
-Contributions are welcome! Please create a pull request or open an issue for any changes or improvements.
+## Blog Post
+[work in progress :)]
 
 
