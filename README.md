@@ -10,7 +10,7 @@ This README provides an overview of the project and key components used.
 - [Prerequisites](#prerequisites)
 - [Technologies Used](#technologies-used)
 - [Blog Post](#blogpost)
-- [License](#license)
+- [Website](#website)
 
 ## Project Overview
 
@@ -56,5 +56,8 @@ Before you begin, ensure you have the following:
 
 ## Blog Post
 [work in progress :)]
+
+## Website
+https://cloudbykristine.com 
 
 
